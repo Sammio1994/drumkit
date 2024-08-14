@@ -1,19 +1,18 @@
-function playSound(e) {
-    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-    const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
-    if (!audio) return;
-
-    key.classList.add('playing');
-    audio.currentTime = 0;
+const playclapButton = () => {
+    const audio= document.getElementById("clapSound");
     audio.play();
 }
 
-function removeTransition(e) {
-    if (e.propertyName !== 'transform') return;
-    this.classList.remove('playing');
-}
+ document.addEventListener("clapButton", function(event) {
+     let audio = document.getElementById("clapSound");
+     if (event.code === "KeyA") {
+         audio.play();
+     }
+ })
 
-const keys = document.querySelectorAll('.key');
-keys.forEach(key => key.addEventListener('transitionend', removeTransition));
-window.addEventListener('keydown', playSound);
-    
+//  document.getElementById("keydown").addEventListener("click", playclapButton);
+//  document.addEventListener("keyPress", (event)=>{
+//      if (event.key==="a"){
+//          playclapButton();
+//     }
+// })
