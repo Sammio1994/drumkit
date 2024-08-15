@@ -1,8 +1,13 @@
+// <--! document. is used to access various properties and methods of the document object -->
+// <--! getElementById() is a method in JavaScript that belongs to the document object and is used to access an HTML element by its unique id attribute -->
+// <--! addEventListener() is a method in JavaScript that allows you to attach an event handler to a specified element -->
+// <--! let is a keyword in JavaScript used to declare variables -->
+// <--! audio element is used to embed sound content (such as music, audio files, or other sounds) in a web page -->
 document.getElementById('boomButton').addEventListener('click', () => {
     let audio = document.getElementById('boomSound');
     audio.play();
 });
- 
+
 document.addEventListener('keydown', (event) => {
     let audio = document.getElementById('boomSound');
     if (event.code === 'KeyQ') {
